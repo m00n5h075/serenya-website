@@ -25,13 +25,13 @@
             .test-card {
                 border-color: #4CAF50;
             }
-            
+
             .debug-column {
                 background: rgba(255, 0, 0, 0.1);
                 border: 1px dashed red;
             }
         }
-        
+
         .debug-column {
             background: rgba(0, 0, 255, 0.1);
             border: 1px dashed blue;
@@ -46,10 +46,10 @@
             Container width: <span id="container-width"></span><br>
             Available space per column: <span id="column-space"></span>
         </div>
-        
+
         <h1>3-Column Layout Test</h1>
         <p>These three cards should display side-by-side on desktop screens (1200px+)</p>
-        
+
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12 debug-column">
                 <div class="test-card">
@@ -97,17 +97,17 @@
         function updateDebugInfo() {
             const container = document.querySelector('.container');
             const cards = document.querySelectorAll('.test-card');
-            
+
             document.getElementById('screen-width').textContent = window.innerWidth + 'px';
             document.getElementById('container-width').textContent = container.offsetWidth + 'px';
             document.getElementById('column-space').textContent = Math.floor(container.offsetWidth / 3) + 'px';
-            
+
             cards.forEach(card => {
                 const widthSpan = card.querySelector('.card-width');
                 widthSpan.textContent = card.offsetWidth + 'px';
             });
         }
-        
+
         window.addEventListener('load', updateDebugInfo);
         window.addEventListener('resize', updateDebugInfo);
     </script>

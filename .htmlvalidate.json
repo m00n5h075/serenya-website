@@ -2,10 +2,17 @@
   "extends": ["html-validate:recommended"],
   "rules": {
     "close-order": "error",
-    "void": "error",
+    "void-element": "error",
     "no-unknown-elements": "error",
     "require-sri": "off",
-    "script-type": "off"
+    "script-type": "off",
+    "no-trailing-whitespace": "off",
+    "button-type": "off",
+    "require-button-type": "off",
+    "no-inline-style": "off",
+    "prefer-button": "off",
+    "no-raw-characters": "error",
+    "attribute-allowed-values": "error"
   },
   "elements": [
     "html5"

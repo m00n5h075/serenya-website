@@ -609,12 +609,31 @@ svg {
 
 /* Image styling for new images */
 .process-image,
-.team-image img,
-.support-image img {
+.team-image,
+.support-image {
   max-width: 100%;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Medical disclaimer icon styling */
+.medical-disclaimer-icon {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+/* Inline list styling */
+.inline-list {
+  display: inline-block;
+  text-align: left;
+}
+
+/* Coming soon badge */
+.coming-soon-badge {
+  background-color: var(--text-secondary);
 }
 
 @media (max-width: 768px) {
