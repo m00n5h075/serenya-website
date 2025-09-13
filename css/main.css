@@ -757,7 +757,10 @@ html {
   display: block;
   position: relative;
   top: -96px;
-  visibility: hidden;
+  font-size: 0;
+  line-height: 0;
+  color: transparent;
+  overflow: hidden;
 }
 
 /* Legal contact section gradient background */
