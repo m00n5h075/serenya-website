@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Serenya support team. Get help with AI health analysis, technical issues, or general questions.">
+    <title>Contact Us | Serenya Support</title>
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Contact Serenya | Support & Help">
+    <meta property="og:description" content="Get in touch with Serenya support team for help with health analysis, technical issues, or questions.">
+    <meta property="og:url" content="https://serenya.com/pages/contact">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Contact Serenya Support">
+    <meta name="twitter:description" content="Contact our support team for help with AI health analysis and technical questions.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../images/serenya-logo.svg" alt="Serenya" class="logo">
+                        <span class="logo-text">Serenya</span>
+                    </a>
+                </div>
+                <div class="navbar-nav">
+                    <a href="how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="features.html" class="nav-link">Features</a>
+                    <a href="security.html" class="nav-link">Security</a>
+                    <a href="pricing.html" class="nav-link">Pricing</a>
+                    <a href="about.html" class="nav-link">About</a>
+                    <a href="../download.html" class="btn-primary">Get Started Free</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Page Header -->
+        <section class="page-header py-xl">
+            <div class="container">
+                <div class="text-center">
+                    <h1>Contact Us</h1>
+                    <p class="lead">We're here to help with any questions about Serenya</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Information -->
+        <section class="contact-info py-xl bg-secondary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-lg">
+                        <div class="card text-center">
+                            <div class="feature-icon">📧</div>
+                            <h4 class="card-title">Email Support</h4>
+                            <p class="card-description">Get help with general questions and technical support</p>
+                            <p><strong>support@serenya.com</strong></p>
+                            <p class="body-small">Response time: 24 hours (2 hours for Premium users)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-lg">
+                        <div class="card text-center">
+                            <div class="feature-icon">🔒</div>
+                            <h4 class="card-title">Privacy & Legal</h4>
+                            <p class="card-description">Questions about privacy, security, or legal matters</p>
+                            <p><strong>privacy@serenya.com</strong></p>
+                            <p class="body-small">Response time: 48 hours</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-12 col-sm-12 mb-lg">
+                        <div class="card text-center">
+                            <div class="feature-icon">💼</div>
+                            <h4 class="card-title">Business Inquiries</h4>
+                            <p class="card-description">Partnerships, media inquiries, and business opportunities</p>
+                            <p><strong>business@serenya.com</strong></p>
+                            <p class="body-small">Response time: 72 hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-form py-xl">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-12 mx-auto">
+                        <div class="section-header text-center">
+                            <h2>Send Us a Message</h2>
+                            <p class="lead">Fill out the form below and we'll get back to you as soon as possible</p>
+                        </div>
+                        
+                        <form id="contact-form" class="mt-xxl" name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+                            <input type="hidden" name="form-name" value="contact">
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="name" class="form-label">Full Name *</label>
+                                        <input type="text" id="name" name="name" class="form-input" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label for="email" class="form-label">Email Address *</label>
+                                        <input type="email" id="email" name="email" class="form-input" required>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject" class="form-label">Subject *</label>
+                                <select id="subject" name="subject" class="form-input form-select" required>
+                                    <option value="">Please select a subject</option>
+                                    <option value="Technical Support">Technical Support</option>
+                                    <option value="Account Issues">Account Issues</option>
+                                    <option value="Privacy Questions">Privacy Questions</option>
+                                    <option value="Billing Support">Billing Support</option>
+                                    <option value="Feature Request">Feature Request</option>
+                                    <option value="Bug Report">Bug Report</option>
+                                    <option value="Business Inquiry">Business Inquiry</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message" class="form-label">Message *</label>
+                                <textarea id="message" name="message" class="form-input form-textarea" rows="6" placeholder="Please describe your question or issue in detail..." required></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="user-type" class="form-label">I am a:</label>
+                                <select id="user-type" name="user-type" class="form-input form-select">
+                                    <option value="">Please select</option>
+                                    <option value="Free User">Free User</option>
+                                    <option value="Premium User">Premium User</option>
+                                    <option value="Potential User">Potential User</option>
+                                    <option value="Healthcare Provider">Healthcare Provider</option>
+                                    <option value="Researcher">Researcher</option>
+                                    <option value="Media/Press">Media/Press</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <!-- reCAPTCHA will be inserted here by Netlify -->
+                            <div data-netlify-recaptcha="true"></div>
+                            
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn-primary btn-large">Send Message</button>
+                            </div>
+                            
+                            <p class="body-small text-center mt-md">
+                                By submitting this form, you agree to our 
+                                <a href="legal.html#privacy">Privacy Policy</a> and 
+                                <a href="legal.html#terms">Terms of Service</a>.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Support Resources -->
+        <section class="support-resources py-xl bg-secondary">
+            <div class="container">
+                <div class="section-header text-center">
+                    <h2>Support Resources</h2>
+                    <p class="lead">Find answers faster with our self-service resources</p>
+                </div>
+                
+                <div class="row mt-xxl">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-lg">
+                        <div class="card text-center">
+                            <div class="feature-icon">❓</div>
+                            <h4 class="card-title">FAQ</h4>
+                            <p class="card-description">Common questions and answers about using Serenya</p>
+                            <a href="faq.html" class="btn-secondary">View FAQ</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-lg">
+                        <div class="card text-center">
+                            <div class="feature-icon">🛡️</div>
+                            <h4 class="card-title">Privacy & Security</h4>
+                            <p class="card-description">Learn about our data protection and security measures</p>
+                            <a href="security.html" class="btn-secondary">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-12 col-sm-12 mb-lg">
+                        <div class="card text-center">
+                            <div class="feature-icon">⚙️</div>
+                            <h4 class="card-title">How It Works</h4>
+                            <p class="card-description">Step-by-step guide to using Serenya effectively</p>
+                            <a href="how-it-works.html" class="btn-secondary">Get Started</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Response Time Notice -->
+        <section class="response-notice py-xl">
+            <div class="container text-center">
+                <h2>Response Time Expectations</h2>
+                <div class="row mt-lg">
+                    <div class="col-lg-6 col-md-12 mb-lg">
+                        <div class="card">
+                            <h4 class="card-title">Free Users</h4>
+                            <p class="card-description">We typically respond within 24 hours during business days</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 mb-lg">
+                        <div class="card">
+                            <h4 class="card-title">Premium Users</h4>
+                            <p class="card-description">Priority support with 2-hour response time during business hours</p>
+                        </div>
+                    </div>
+                </div>
+                <p class="body-small mt-lg">Business hours: Monday-Friday, 9 AM - 6 PM EST</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-brand">
+                        <img src="../images/serenya-logo.svg" alt="Serenya" class="footer-logo">
+                        <p>Your AI Health Agent</p>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Product</h4>
+                    <a href="how-it-works.html" class="footer-link">How It Works</a>
+                    <a href="features.html" class="footer-link">Features</a>
+                    <a href="security.html" class="footer-link">Security</a>
+                    <a href="pricing.html" class="footer-link">Pricing</a>
+                    <a href="../download.html" class="footer-link">Download App</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="about.html" class="footer-link">About Us</a>
+                    <a href="contact.html" class="footer-link">Contact</a>
+                    <a href="faq.html" class="footer-link">FAQ</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="legal.html" class="footer-link">Privacy Policy</a>
+                    <a href="legal.html#terms" class="footer-link">Terms of Service</a>
+                    <a href="legal.html#disclaimer" class="footer-link">Medical Disclaimer</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Serenya. All rights reserved.</p>
+                <p class="medical-disclaimer">Serenya is for educational purposes only and does not provide medical advice.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

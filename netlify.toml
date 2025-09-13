@@ -1,0 +1,93 @@
+# Netlify Configuration for Serenya Website
+
+[build]
+  # No build command needed for static site
+  publish = "."
+  
+[build.environment]
+  # Node version for any future build processes
+  NODE_VERSION = "18"
+
+# Form settings
+[forms]
+  # Enable form detection
+  spam_protection = true
+
+# Headers for security and performance
+[[headers]]
+  for = "/*"
+  [headers.values]
+    # Security headers
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    # Performance headers
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "*.svg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Redirect rules (also defined in _redirects file for redundancy)
+[[redirects]]
+  from = "/pages/contact"
+  to = "/pages/thank-you"
+  status = 200
+  conditions = {Role = ["admin"], Country = ["US"]}
+  force = false
+
+# Custom 404 page (optional)
+# [[redirects]]
+#   from = "/*"
+#   to = "/404.html"
+#   status = 404
+
+# Branch deploy contexts
+[context.production]
+  command = "echo 'Production build'"
+
+[context.deploy-preview]
+  command = "echo 'Deploy preview build'"
+
+[context.branch-deploy]
+  command = "echo 'Branch deploy build'"
+
+# Plugin configuration
+[[plugins]]
+  package = "netlify-plugin-html-validate"
+  
+  [plugins.inputs]
+    # HTML validation settings
+    extends = ["html-validate:recommended"]
+
+# Edge functions (for future use if needed)
+# [[edge_functions]]
+#   function = "contact-form"
+#   path = "/api/contact"

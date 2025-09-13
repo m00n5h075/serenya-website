@@ -1,0 +1,44 @@
+# Netlify Redirects Configuration for Serenya Website
+
+# Form submission success redirect
+/pages/contact /pages/thank-you 200
+
+# Clean URL redirects (remove .html extensions)
+/how-it-works /pages/how-it-works.html 200
+/features /pages/features.html 200
+/security /pages/security.html 200
+/privacy /pages/security.html 200
+/pricing /pages/pricing.html 200
+/about /pages/about.html 200
+/faq /pages/faq.html 200
+/legal /pages/legal.html 200
+/contact /pages/contact.html 200
+/thank-you /pages/thank-you.html 200
+
+# Download page aliases
+/app /download.html 200
+/get-app /download.html 200
+/mobile /download.html 200
+
+# Legal page anchors
+/terms /pages/legal.html#terms 200
+/privacy-policy /pages/legal.html#privacy 200
+/medical-disclaimer /pages/legal.html#disclaimer 200
+
+# Support redirects
+/support /pages/contact.html 200
+/help /pages/faq.html 200
+
+# Social media and external links (if needed in future)
+# /blog/* https://blog.serenya.com/:splat 301
+# /docs/* https://docs.serenya.com/:splat 301
+
+# Mobile app store redirects (for smart CTAs)
+/ios https://apps.apple.com/app/serenya/[app-id] 302
+/android https://play.google.com/store/apps/details?id=com.serenya.app 302
+
+# SPA fallback (not needed for static site, but good practice)
+# /* /index.html 200
+
+# 404 redirect to homepage for now (could create custom 404 page later)
+/* /index.html 404
