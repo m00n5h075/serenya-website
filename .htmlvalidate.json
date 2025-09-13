@@ -2,7 +2,6 @@
   "extends": ["html-validate:recommended"],
   "rules": {
     "close-order": "error",
-    "void-element": "error",
     "no-unknown-elements": "error",
     "require-sri": "off",
     "script-type": "off",
