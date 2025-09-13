@@ -199,10 +199,6 @@ h4, .heading-h4 {
   h3, .heading-h3 { font-size: 1.375rem; line-height: 1.3; }
   .body-large, .lead { font-size: 1rem; }
   
-  .container {
-    padding: 0 16px;
-  }
-  
   /* Improve spacing on mobile */
   .py-xxl { padding-top: var(--spacing-xl); padding-bottom: var(--spacing-xl); }
   .py-xl { padding-top: var(--spacing-lg); padding-bottom: var(--spacing-lg); }
@@ -210,7 +206,7 @@ h4, .heading-h4 {
 
 @media (max-width: 480px) {
   .container {
-    padding: 0 12px;
+    padding: 0 16px;
   }
   
   .hero-title {
@@ -222,156 +218,77 @@ h4, .heading-h4 {
   }
 }
 
-/* Layout System */
+/* Clean Layout System */
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px;
 }
 
-/* Wider container for proper 3-column layouts on desktop */
+/* Wider container for desktop */
 @media (min-width: 1200px) {
   .container {
     max-width: 1320px;
-    padding: 0 24px;
+    padding: 0 20px;
   }
 }
 
 @media (min-width: 1400px) {
   .container {
     max-width: 1400px;
-    padding: 0 24px;
+    padding: 0 20px;
   }
 }
 
 .container-narrow {
   max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .container-wide {
   max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* Grid System */
+/* Clean Grid System - Gap-aware calculations */
 .row {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -12px;
+  gap: 24px;
   width: 100%;
 }
 
-/* Ensure proper flex behavior on desktop */
-@media (min-width: 1200px) {
-  .row {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: stretch;
-  }
-}
-
-/* This rule is replaced below */
-
-.col {
-  flex: 1;
-}
-
-/* Base column classes (all screens) */
-.col-6 { flex: 0 0 50%; }
-.col-4 { flex: 0 0 33.333%; }
-.col-3 { flex: 0 0 25%; }
-
-/* Default: all columns are full width (mobile first) */
+/* Column base styles - mobile first */
 [class*="col-"] {
-  flex: 0 0 100%;
-  max-width: 100%;
-  min-width: 0; /* Prevent flex items from having implicit minimum width */
+  flex: 1 1 100%;
+  min-width: 0;
 }
 
-/* Small screens and up (576px+) */
-@media (min-width: 576px) {
-  .col-sm-12 { flex: 0 0 100%; max-width: 100%; }
-  .col-sm-6 { flex: 0 0 50%; max-width: 50%; }
-}
-
-/* Medium screens and up (768px+) */
-@media (min-width: 768px) {
-  .col-md-12 { flex: 0 0 100%; max-width: 100%; }
-  .col-md-8 { flex: 0 0 66.666%; max-width: 66.666%; }
-  .col-md-6 { flex: 0 0 50%; max-width: 50%; }
-  .col-md-4 { flex: 0 0 33.333%; max-width: 33.333%; }
-}
-
-/* Large screens and up (992px+) */
-@media (min-width: 992px) {
-  .col-lg-12 { flex: 0 0 100%; max-width: 100%; }
-  .col-lg-8 { flex: 0 0 66.66666667%; max-width: 66.66666667%; }
-  .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
-  .col-lg-4 { flex: 0 0 33.33333333%; max-width: 33.33333333%; }
-  .col-lg-3 { flex: 0 0 25%; max-width: 25%; }
-}
-
-/* Enhanced 3-column layouts for desktop */
-@media (min-width: 1200px) {
-  .col-lg-4 { 
-    flex: 0 0 33.33333333% !important; 
-    max-width: 33.33333333% !important;
-    width: 33.33333333%;
-  }
-  
-  .col-lg-3 { 
-    flex: 0 0 25% !important; 
-    max-width: 25% !important;
-    width: 25%;
-  }
-  
-  .col-lg-6 { 
-    flex: 0 0 50% !important; 
-    max-width: 50% !important;
-    width: 50%;
-  }
-  
-  .col-lg-8 { 
-    flex: 0 0 66.66666667% !important; 
-    max-width: 66.66666667% !important;
-    width: 66.66666667%;
-  }
-  
-  .col-lg-12 { 
-    flex: 0 0 100% !important; 
-    max-width: 100% !important;
-    width: 100%;
-  }
-}
-
-/* All columns should have equal padding */
-[class*="col-"] {
-  padding: 0 12px;
-}
-
-/* Reduce column padding on larger screens for better fit */
-@media (min-width: 1200px) {
-  [class*="col-"] {
-    padding: 0 8px;
-  }
-}
-
-/* Adjust row margins to match */
-@media (min-width: 1200px) {
-  .row {
-    margin: 0 -8px;
-  }
-}
-
-/* This media query is now handled by the mobile-first approach above */
-
+/* Mobile: all columns full width */
 @media (max-width: 767px) {
-  .col-md-12, .col-md-6, .col-md-4, .col-md-8 { 
-    flex: 0 0 100%; 
-    max-width: 100%;
+  .row {
+    gap: 16px;
   }
-  .row { margin: 0 -8px; }
-  [class*="col-"] { padding: 0 8px; }
+}
+
+/* Tablet and up: responsive column widths - accounting for gaps */
+@media (min-width: 768px) {
+  .col-md-12 { flex: 1 1 100%; }
+  .col-md-8 { flex: 1 1 calc(66.666% - 16px); }
+  .col-md-6 { flex: 1 1 calc(50% - 12px); }
+  .col-md-4 { flex: 1 1 calc(33.333% - 16px); }
+}
+
+/* Desktop: precise column widths - accounting for gaps */
+@media (min-width: 992px) {
+  .col-lg-12 { flex: 1 1 100%; }
+  .col-lg-8 { flex: 1 1 calc(66.66666667% - 16px); }
+  .col-lg-6 { flex: 1 1 calc(50% - 12px); }
+  .col-lg-4 { flex: 1 1 calc(33.33333333% - 16px); }
+  .col-lg-3 { flex: 1 1 calc(25% - 18px); }
 }
 
 /* Spacing Utilities */
@@ -687,7 +604,14 @@ svg {
 }
 
 .privacy-features {
-  gap: 32px;
+  gap: 24px;
+}
+
+/* Ensure all custom row classes use consistent gap */
+.stats,
+.values-grid,
+.commitment-items {
+  gap: 24px;
 }
 
 .privacy-feature {
@@ -701,22 +625,22 @@ svg {
   font-weight: 500;
 }
 
-/* Final CTA Section */
+/* Final CTA Section - Light green gradient for better button contrast */
 .final-cta {
-  background: linear-gradient(135deg, var(--serenya-blue-primary) 0%, var(--serenya-blue-dark) 100%);
-  color: var(--serenya-white);
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--serenya-green-light) 100%);
+  color: var(--text-primary);
 }
 
 .final-cta h2 {
-  color: var(--serenya-white);
+  color: var(--text-primary);
 }
 
 .final-cta .lead {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--text-secondary);
 }
 
 .final-cta .cta-supporting {
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--text-secondary);
 }
 
 /* Footer */
@@ -795,6 +719,7 @@ svg {
   outline-offset: 2px;
 }
 
+
 /* Ensure interactive elements have sufficient contrast and focus states */
 button:focus,
 a:focus,
@@ -825,6 +750,24 @@ textarea:focus {
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
+}
+
+/* Anchor targets for legal page sections */
+.anchor-target {
+  display: block;
+  position: relative;
+  top: -96px;
+  visibility: hidden;
+}
+
+/* Legal contact section gradient background */
+.legal-contact {
+  background: linear-gradient(135deg, #FFFFFF 0%, var(--bg-secondary) 100%);
+}
+
+/* FAQ contact support section gradient background */
+.contact-support {
+  background: linear-gradient(135deg, #FFFFFF 0%, var(--bg-secondary) 100%);
 }
 
 /* Print styles */

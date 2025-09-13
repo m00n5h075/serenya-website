@@ -360,7 +360,7 @@
 
 .faq-question {
   width: 100%;
-  padding: 24px 0;
+  padding: 16px 0;
   background: none;
   border: none;
   text-align: left;
@@ -378,12 +378,17 @@
   color: var(--serenya-blue-primary);
 }
 
+/* Remove focus outline for FAQ questions */
+.faq-question:focus {
+  outline: none;
+}
+
 .faq-question::after {
   content: '+';
   font-size: 1.5rem;
   font-weight: 300;
   color: var(--serenya-blue-primary);
-  transition: transform 0.25s ease;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .faq-question.active::after {
@@ -391,17 +396,21 @@
 }
 
 .faq-answer {
-  padding-bottom: 0;
   color: var(--text-secondary);
   line-height: 1.6;
-  max-height: 0;
   overflow: hidden;
-  transition: max-height 0.3s ease, padding-bottom 0.3s ease;
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  transition: max-height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              padding 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .faq-answer.active {
-  max-height: 800px; /* Increased for longer content */
-  padding-bottom: 24px;
+  max-height: 1000px;
+  opacity: 1;
+  padding: 0;
 }
 
 /* Alert/Notification Components */
