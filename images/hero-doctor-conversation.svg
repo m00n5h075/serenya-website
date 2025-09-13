@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600" height="400">
+  <defs>
+    <linearGradient id="heroGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E3F2FD;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2196F3;stop-opacity:0.3" />
+    </linearGradient>
+  </defs>
+  
+  <rect width="600" height="400" fill="url(#heroGradient)" />
+  
+  <!-- Medical consultation illustration -->
+  <circle cx="200" cy="180" r="40" fill="#4CAF50" opacity="0.8" />
+  <rect x="180" y="160" width="40" height="40" rx="8" fill="white" />
+  <text x="195" y="185" font-family="sans-serif" font-size="20" fill="#4CAF50">👩‍⚕️</text>
+  
+  <circle cx="400" cy="180" r="40" fill="#2196F3" opacity="0.8" />
+  <rect x="380" y="160" width="40" height="40" rx="8" fill="white" />
+  <text x="395" y="185" font-family="sans-serif" font-size="20" fill="#2196F3">🧑‍💼</text>
+  
+  <!-- Phone showing Serenya app -->
+  <rect x="280" y="140" width="40" height="80" rx="8" fill="#333" />
+  <rect x="285" y="150" width="30" height="60" rx="4" fill="#E3F2FD" />
+  <text x="295" y="185" font-family="sans-serif" font-size="12" fill="#2196F3">📊</text>
+  
+  <text x="300" y="320" font-family="Inter, sans-serif" font-size="18" font-weight="500" fill="#757575" text-anchor="middle">
+    Person discussing lab results with doctor using Serenya analysis
+  </text>
+</svg>

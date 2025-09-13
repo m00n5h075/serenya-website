@@ -134,13 +134,26 @@ document.addEventListener('DOMContentLoaded', function() {
         return emailRegex.test(email);
     }
     
-    // Add loading state to form submission
+    // Add loading state to form submission (only if form exists and is valid)
     const submitButton = contactForm?.querySelector('button[type="submit"]');
     
-    if (submitButton) {
-        contactForm.addEventListener('submit', function() {
-            submitButton.classList.add('btn-loading');
-            submitButton.disabled = true;
+    if (submitButton && contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            // Only add loading state if form passes validation
+            const requiredFields = this.querySelectorAll('[required]');
+            let isValid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    isValid = false;
+                }
+            });
+            
+            if (isValid) {
+                submitButton.classList.add('btn-loading');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Sending...';
+            }
         });
     }
     
@@ -192,45 +205,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// CSS for mobile navigation (added via JavaScript for progressive enhancement)
-const mobileNavStyles = `
-.navbar-nav.mobile-nav-open {
-    display: flex !important;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: var(--bg-primary);
-    border-top: 1px solid var(--surface-border);
-    flex-direction: column;
-    padding: 24px;
-    gap: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.mobile-menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
-}
-
-.mobile-menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-}
-
-.mobile-menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(7px, -6px);
-}
-
-.form-input.error {
-    border-color: var(--color-error);
-    box-shadow: 0 0 0 2px rgba(255, 82, 82, 0.2);
-}
-
-.field-error {
-    color: var(--color-error);
-    font-size: 0.875rem;
-    margin-top: 4px;
-}
-
+// Add fade-in animation styles (keeping these dynamic since they're enhancement)
+const animationStyles = `
 .fade-in {
     animation: fadeInUp 0.6s ease forwards;
 }
@@ -245,15 +221,9 @@ const mobileNavStyles = `
         transform: translateY(0);
     }
 }
-
-@media (max-width: 768px) {
-    .navbar-nav {
-        display: none;
-    }
-}
 `;
 
-// Inject mobile navigation styles
+// Inject animation styles for progressive enhancement
 const styleSheet = document.createElement('style');
-styleSheet.textContent = mobileNavStyles;
+styleSheet.textContent = animationStyles;
 document.head.appendChild(styleSheet);

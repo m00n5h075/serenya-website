@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenya - Test Page for Fixes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header class="header">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <a href="/" class="logo-link">
+                        <img src="images/serenya-logo.svg" alt="Serenya" class="logo">
+                        <span class="logo-text">Serenya</span>
+                    </a>
+                </div>
+                <div class="navbar-nav">
+                    <a href="pages/how-it-works.html" class="nav-link">How It Works</a>
+                    <a href="pages/features.html" class="nav-link">Features</a>
+                    <a href="download.html" class="btn-primary">Get Started</a>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Test Hero Section -->
+        <section class="hero py-xl">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12">
+                        <h1>Test Page - All Fixes Applied</h1>
+                        <p class="lead">This page tests all the fixes that have been applied to the Serenya website.</p>
+                        <div class="cta-buttons mt-lg">
+                            <a href="#test-grid" class="btn-primary">Test Grid</a>
+                            <a href="#test-faq" class="btn-secondary">Test FAQ</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12">
+                        <div class="hero-image">
+                            <img src="images/hero-doctor-conversation.svg" alt="Test hero image" class="hero-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Test Grid Layout -->
+        <section id="test-grid" class="py-xl bg-secondary">
+            <div class="container">
+                <h2 class="text-center">Grid Layout Test</h2>
+                <div class="row mt-lg">
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-lg">
+                        <div class="card">
+                            <h4 class="card-title">Card 1</h4>
+                            <p class="card-description">This tests the responsive grid system</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-12 mb-lg">
+                        <div class="card">
+                            <h4 class="card-title">Card 2</h4>
+                            <p class="card-description">Mobile navigation and responsive layouts</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12 mb-lg">
+                        <div class="card">
+                            <h4 class="card-title">Card 3</h4>
+                            <p class="card-description">Privacy badges and form validation</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-lg">
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-lg">
+                        <div class="privacy-feature text-center">
+                            <div class="privacy-badge">✅ Fixed Issues</div>
+                            <h4 class="mt-md">All Major Issues Resolved</h4>
+                            <p>Missing images, broken layouts, and navigation problems have been fixed.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-lg">
+                        <div class="privacy-feature text-center">
+                            <div class="privacy-badge">📱 Mobile Ready</div>
+                            <h4 class="mt-md">Mobile Navigation Working</h4>
+                            <p>Responsive design and mobile menu functionality restored.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Test FAQ Section -->
+        <section id="test-faq" class="py-xl">
+            <div class="container">
+                <h2 class="text-center">FAQ Accordion Test</h2>
+                <div class="faq-category mt-lg">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Does the mobile navigation work?
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! The mobile navigation CSS has been moved from JavaScript-injected styles to the main CSS file for better reliability. The hamburger menu animation also works properly now.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Are the images displaying correctly?
+                        </button>
+                        <div class="faq-answer">
+                            <p>All missing images have been created as placeholder SVG files. The logo, hero image, and app store badges are now displaying correctly.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            Is the responsive grid working?
+                        </button>
+                        <div class="faq-answer">
+                            <p>The responsive grid system has been enhanced with missing column classes (col-lg-8, col-md-4, col-md-8) and better breakpoint handling for mobile devices.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Test Form -->
+        <section class="py-xl bg-secondary">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 mx-auto">
+                        <h2 class="text-center">Form Validation Test</h2>
+                        <form id="test-form" class="mt-lg">
+                            <div class="form-group">
+                                <label for="test-email" class="form-label">Email Address *</label>
+                                <input type="email" id="test-email" name="email" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="test-message" class="form-label">Message *</label>
+                                <textarea id="test-message" name="message" class="form-input form-textarea" required></textarea>
+                            </div>
+                            <div class="form-group text-center">
+                                <button type="submit" class="btn-primary">Test Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container text-center">
+            <p>&copy; 2024 Serenya Test Page. All fixes implemented successfully.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

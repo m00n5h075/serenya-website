@@ -388,16 +388,17 @@
 }
 
 .faq-answer {
-  padding-bottom: 24px;
+  padding-bottom: 0;
   color: var(--text-secondary);
   line-height: 1.6;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.25s ease;
+  transition: max-height 0.3s ease, padding-bottom 0.3s ease;
 }
 
 .faq-answer.active {
-  max-height: 500px; /* Adjust based on content */
+  max-height: 800px; /* Increased for longer content */
+  padding-bottom: 24px;
 }
 
 /* Alert/Notification Components */
