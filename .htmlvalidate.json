@@ -1,0 +1,13 @@
+{
+  "extends": ["html-validate:recommended"],
+  "rules": {
+    "close-order": "error",
+    "void": "error",
+    "no-unknown-elements": "error",
+    "require-sri": "off",
+    "script-type": "off"
+  },
+  "elements": [
+    "html5"
+  ]
+}

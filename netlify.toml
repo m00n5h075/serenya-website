@@ -85,7 +85,8 @@
   
   [plugins.inputs]
     # HTML validation settings
-    extends = ["html-validate:recommended"]
+    config = ".htmlvalidate.json"
+    ext = ["html"]
 
 # Edge functions (for future use if needed)
 # [[edge_functions]]
