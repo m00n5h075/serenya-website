@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Column Layout Test</title>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .test-card {
+            background: #f0f0f0;
+            border: 2px solid #2196F3;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+            min-height: 200px;
+        }
+        .debug-info {
+            background: #fff3cd;
+            border: 1px solid #ffc107;
+            padding: 10px;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        @media (min-width: 1200px) {
+            .test-card {
+                border-color: #4CAF50;
+            }
+            
+            .debug-column {
+                background: rgba(255, 0, 0, 0.1);
+                border: 1px dashed red;
+            }
+        }
+        
+        .debug-column {
+            background: rgba(0, 0, 255, 0.1);
+            border: 1px dashed blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="debug-info">
+            <strong>Container Debug Info:</strong><br>
+            Screen width: <span id="screen-width"></span><br>
+            Container width: <span id="container-width"></span><br>
+            Available space per column: <span id="column-space"></span>
+        </div>
+        
+        <h1>3-Column Layout Test</h1>
+        <p>These three cards should display side-by-side on desktop screens (1200px+)</p>
+        
+        <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-12 debug-column">
+                <div class="test-card">
+                    <h3>Card 1</h3>
+                    <p>This is the first test card. It should be 33.33% width on desktop.</p>
+                    <small>Width: <span class="card-width"></span></small>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 debug-column">
+                <div class="test-card">
+                    <h3>Card 2</h3>
+                    <p>This is the second test card. It should be 33.33% width on desktop.</p>
+                    <small>Width: <span class="card-width"></span></small>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 debug-column">
+                <div class="test-card">
+                    <h3>Card 3</h3>
+                    <p>This is the third test card. It should be 33.33% width on desktop.</p>
+                    <small>Width: <span class="card-width"></span></small>
+                </div>
+            </div>
+        </div>
+
+        <h2>2-Column Layout Test</h2>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="test-card">
+                    <h3>Card A</h3>
+                    <p>50% width card</p>
+                    <small>Width: <span class="card-width"></span></small>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="test-card">
+                    <h3>Card B</h3>
+                    <p>50% width card</p>
+                    <small>Width: <span class="card-width"></span></small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateDebugInfo() {
+            const container = document.querySelector('.container');
+            const cards = document.querySelectorAll('.test-card');
+            
+            document.getElementById('screen-width').textContent = window.innerWidth + 'px';
+            document.getElementById('container-width').textContent = container.offsetWidth + 'px';
+            document.getElementById('column-space').textContent = Math.floor(container.offsetWidth / 3) + 'px';
+            
+            cards.forEach(card => {
+                const widthSpan = card.querySelector('.card-width');
+                widthSpan.textContent = card.offsetWidth + 'px';
+            });
+        }
+        
+        window.addEventListener('load', updateDebugInfo);
+        window.addEventListener('resize', updateDebugInfo);
+    </script>
+</body>
+</html>

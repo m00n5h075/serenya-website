@@ -70,8 +70,8 @@
   /* Breakpoints */
   --breakpoint-sm: 576px;
   --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1400px;
 }
 
 /* CSS Reset and Base Styles */
@@ -79,6 +79,11 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+/* Ensure all flex items respect box-sizing */
+[class*="col-"] {
+  box-sizing: border-box;
 }
 
 html {
@@ -225,6 +230,21 @@ h4, .heading-h4 {
   padding: 0 24px;
 }
 
+/* Wider container for proper 3-column layouts on desktop */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1320px;
+    padding: 0 24px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1400px;
+    padding: 0 24px;
+  }
+}
+
 .container-narrow {
   max-width: 800px;
 }
@@ -238,42 +258,112 @@ h4, .heading-h4 {
   display: flex;
   flex-wrap: wrap;
   margin: 0 -12px;
+  width: 100%;
 }
+
+/* Ensure proper flex behavior on desktop */
+@media (min-width: 1200px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+  }
+}
+
+/* This rule is replaced below */
 
 .col {
   flex: 1;
 }
 
+/* Base column classes (all screens) */
 .col-6 { flex: 0 0 50%; }
 .col-4 { flex: 0 0 33.333%; }
 .col-3 { flex: 0 0 25%; }
 
-/* Responsive columns */
-.col-lg-6 { flex: 0 0 50%; }
-.col-lg-4 { flex: 0 0 33.333%; }
-.col-lg-3 { flex: 0 0 25%; }
-.col-lg-8 { flex: 0 0 66.666%; }
-.col-lg-12 { flex: 0 0 100%; }
+/* Default: all columns are full width (mobile first) */
+[class*="col-"] {
+  flex: 0 0 100%;
+  max-width: 100%;
+  min-width: 0; /* Prevent flex items from having implicit minimum width */
+}
 
-.col-md-12 { flex: 0 0 100%; }
-.col-md-6 { flex: 0 0 50%; }
-.col-md-4 { flex: 0 0 33.333%; }
-.col-md-8 { flex: 0 0 66.666%; }
+/* Small screens and up (576px+) */
+@media (min-width: 576px) {
+  .col-sm-12 { flex: 0 0 100%; max-width: 100%; }
+  .col-sm-6 { flex: 0 0 50%; max-width: 50%; }
+}
 
-.col-sm-12 { flex: 0 0 100%; }
-.col-sm-6 { flex: 0 0 50%; }
+/* Medium screens and up (768px+) */
+@media (min-width: 768px) {
+  .col-md-12 { flex: 0 0 100%; max-width: 100%; }
+  .col-md-8 { flex: 0 0 66.666%; max-width: 66.666%; }
+  .col-md-6 { flex: 0 0 50%; max-width: 50%; }
+  .col-md-4 { flex: 0 0 33.333%; max-width: 33.333%; }
+}
+
+/* Large screens and up (992px+) */
+@media (min-width: 992px) {
+  .col-lg-12 { flex: 0 0 100%; max-width: 100%; }
+  .col-lg-8 { flex: 0 0 66.66666667%; max-width: 66.66666667%; }
+  .col-lg-6 { flex: 0 0 50%; max-width: 50%; }
+  .col-lg-4 { flex: 0 0 33.33333333%; max-width: 33.33333333%; }
+  .col-lg-3 { flex: 0 0 25%; max-width: 25%; }
+}
+
+/* Enhanced 3-column layouts for desktop */
+@media (min-width: 1200px) {
+  .col-lg-4 { 
+    flex: 0 0 33.33333333% !important; 
+    max-width: 33.33333333% !important;
+    width: 33.33333333%;
+  }
+  
+  .col-lg-3 { 
+    flex: 0 0 25% !important; 
+    max-width: 25% !important;
+    width: 25%;
+  }
+  
+  .col-lg-6 { 
+    flex: 0 0 50% !important; 
+    max-width: 50% !important;
+    width: 50%;
+  }
+  
+  .col-lg-8 { 
+    flex: 0 0 66.66666667% !important; 
+    max-width: 66.66666667% !important;
+    width: 66.66666667%;
+  }
+  
+  .col-lg-12 { 
+    flex: 0 0 100% !important; 
+    max-width: 100% !important;
+    width: 100%;
+  }
+}
 
 /* All columns should have equal padding */
 [class*="col-"] {
   padding: 0 12px;
 }
 
-@media (max-width: 991px) {
-  .col-lg-6, .col-lg-4, .col-lg-3, .col-lg-8, .col-lg-12 { 
-    flex: 0 0 100%; 
-    max-width: 100%;
+/* Reduce column padding on larger screens for better fit */
+@media (min-width: 1200px) {
+  [class*="col-"] {
+    padding: 0 8px;
   }
 }
+
+/* Adjust row margins to match */
+@media (min-width: 1200px) {
+  .row {
+    margin: 0 -8px;
+  }
+}
+
+/* This media query is now handled by the mobile-first approach above */
 
 @media (max-width: 767px) {
   .col-md-12, .col-md-6, .col-md-4, .col-md-8 { 
@@ -515,6 +605,30 @@ img {
 svg {
   max-width: 100%;
   height: auto;
+}
+
+/* Image styling for new images */
+.process-image,
+.team-image img,
+.support-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  .process-image,
+  .team-image img,
+  .support-image img {
+    margin-top: 2rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  }
+  
+  .team-image,
+  .support-image {
+    margin-top: 2rem;
+  }
 }
 
 /* Feature Cards */
