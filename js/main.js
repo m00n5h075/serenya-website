@@ -57,11 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 cta.href = 'https://play.google.com/store/apps/details?id=com.serenya.app';
             } else {
                 // Fallback to download page
-                cta.href = 'download.html';
+                cta.href = 'pages/download.html';
             }
         } else {
             // Desktop users go to download page
-            cta.href = 'download.html';
+            cta.href = 'pages/download.html';
         }
     });
     

@@ -16,9 +16,9 @@
 /thank-you /pages/thank-you.html 200
 
 # Download page aliases
-/app /download.html 200
-/get-app /download.html 200
-/mobile /download.html 200
+/app /pages/download.html 200
+/get-app /pages/download.html 200
+/mobile /pages/download.html 200
 
 # Legal page anchors
 /terms /pages/legal.html#terms 200

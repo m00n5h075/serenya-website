@@ -17,7 +17,6 @@ A professional, static marketing website for Serenya - Your AI Health Agent. Bui
 ```
 serenya-website/
 ├── index.html                 # Homepage
-├── download.html              # App download page
 ├── css/
 │   ├── main.css              # Main stylesheet with design tokens
 │   └── components.css        # Component styles
@@ -33,6 +32,7 @@ serenya-website/
 │   ├── faq.html              # FAQ with accordion
 │   ├── legal.html            # Terms & privacy policy
 │   ├── contact.html          # Contact form
+│   ├── download.html         # App download page
 │   └── thank-you.html        # Form submission confirmation
 ├── _redirects                # Netlify redirects configuration
 ├── netlify.toml              # Netlify deployment configuration
