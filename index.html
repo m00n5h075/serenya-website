@@ -22,17 +22,42 @@
     <meta name="twitter:title" content="Serenya - AI Health Analysis">
     <meta name="twitter:description" content="Understand your lab results with AI-powered analysis. Private, secure, instant insights.">
 
-    <!-- Fonts - Optimized for Critical Path -->
+    <!-- Fonts - Optimized to Prevent Layout Shifts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIq15j8eUY.woff2" as="font" type="font/woff2" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
+    
+    <!-- Inline font face declarations to prevent FOIT -->
+    <style>
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIq15j8eUY.woff2) format('woff2');
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 500;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIq15j8eUY.woff2) format('woff2');
+        }
+        @font-face {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-display: swap;
+            src: url(https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIq15j8eUY.woff2) format('woff2');
+        }
+    </style>
 
     <!-- Critical CSS - Inline key styles -->
     <style>
         /* Critical above-the-fold styles */
-        :root{--serenya-blue-primary:#2196F3;--serenya-blue-light:#E3F2FD;--serenya-white:#FFFFFF;--text-primary:#212121;--text-secondary:#757575;--bg-primary:#FFFFFF;--surface-border:#E0E0E0;--font-primary:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto',sans-serif;--spacing-lg:24px;--spacing-xl:32px;--spacing-xxl:48px}
+        :root{--serenya-blue-primary:#2196F3;--serenya-blue-light:#E3F2FD;--serenya-white:#FFFFFF;--text-primary:#212121;--text-secondary:#757575;--bg-primary:#FFFFFF;--surface-border:#E0E0E0;--font-primary:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto',sans-serif;--spacing-lg:24px;--spacing-xl:32px;--spacing-xxl:48px}
+        /* Font size adjust to minimize layout shift */
+        @font-face{font-family:'Inter Fallback';size-adjust:107.55%;src:local('Arial')}
         *{box-sizing:border-box;margin:0;padding:0}
         html{font-size:16px;line-height:1.5}
         body{font-family:var(--font-primary);font-size:1rem;line-height:1.5;color:var(--text-primary);background-color:var(--bg-primary);-webkit-font-smoothing:antialiased}
@@ -75,7 +100,7 @@
             <div class="container">
                 <div class="navbar-brand">
                     <a href="/" class="logo-link">
-                        <img src="images/serenya-logo-tight.webp" alt="Serenya" class="logo">
+                        <img src="images/serenya-logo-tight.webp" alt="Serenya" class="logo" width="528" height="146">
                     </a>
                 </div>
                 <div class="navbar-nav">
@@ -113,7 +138,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="hero-image">
-                            <img src="images/hero-doctor-conversation.webp" alt="Person confidently discussing lab results with doctor using smartphone showing Serenya analysis" class="hero-img">
+                            <img src="images/hero-doctor-conversation.webp" alt="Person confidently discussing lab results with doctor using smartphone showing Serenya analysis" class="hero-img" width="1024" height="1024">
                         </div>
                     </div>
                 </div>
@@ -132,7 +157,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-lg">
                         <div class="card feature-card">
                             <div class="feature-icon">
-                                <img src="images/home-upload-lab-results.webp" alt="Upload lab results" class="feature-icon-img">
+                                <img src="images/home-upload-lab-results.webp" alt="Upload lab results" class="feature-icon-img" width="1024" height="1024" loading="lazy">
                             </div>
                             <h3 class="card-title">Upload Lab Results</h3>
                             <p class="card-description">Files from any medical provider</p>
@@ -142,7 +167,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-lg">
                         <div class="card feature-card">
                             <div class="feature-icon">
-                                <img src="images/get-clear-explanations.webp" alt="Get clear explanations" class="feature-icon-img">
+                                <img src="images/get-clear-explanations.webp" alt="Get clear explanations" class="feature-icon-img" width="1024" height="1024" loading="lazy">
                             </div>
                             <h3 class="card-title">Get Clear Explanations</h3>
                             <p class="card-description">Medical terms in language you understand</p>
@@ -152,7 +177,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-lg">
                         <div class="card feature-card">
                             <div class="feature-icon">
-                                <img src="images/feel-more-confident.webp" alt="Feel more confident" class="feature-icon-img">
+                                <img src="images/feel-more-confident.webp" alt="Feel more confident" class="feature-icon-img" width="1024" height="1024" loading="lazy">
                             </div>
                             <h3 class="card-title">Feel More Confident</h3>
                             <p class="card-description">Arrive prepared for your next doctor visit</p>
@@ -219,7 +244,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-brand">
-                        <img src="images/serenya-icon-logo.webp" alt="Serenya" class="footer-logo">
+                        <img src="images/serenya-icon-logo.webp" alt="Serenya" class="footer-logo" width="173" height="146" loading="lazy">
                         <p>Your AI Health Agent</p>
                     </div>
                 </div>
@@ -247,7 +272,7 @@
             <div class="footer-bottom">
                 <p>&copy; 2025 Serenya. All rights reserved.</p>
                 <p class="medical-disclaimer">
-                    <img src="images/medical-disclaimer-icon.webp" alt="Medical disclaimer" class="medical-disclaimer-icon">
+                    <img src="images/medical-disclaimer-icon.webp" alt="Medical disclaimer" class="medical-disclaimer-icon" width="1024" height="1024" loading="lazy">
                     Serenya is for educational purposes only and does not provide medical advice.
                 </p>
             </div>
