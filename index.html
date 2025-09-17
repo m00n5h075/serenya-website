@@ -6,6 +6,10 @@
     <meta name="description" content="Transform your lab results into clear, understandable insights. Serenya helps you understand your health data and prepare for confident doctor conversations. Privacy-first, instant analysis.">
     <meta name="keywords" content="AI health analysis, lab results interpretation, medical document analysis, health privacy, understand blood test">
     <title>Serenya - Your AI Health Agent | Understand Lab Results Instantly</title>
+    
+    <!-- Performance optimizations -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
 
     <!-- Open Graph -->
     <meta property="og:title" content="Serenya - AI Health Analysis | Understand Lab Results">
@@ -18,14 +22,36 @@
     <meta name="twitter:title" content="Serenya - AI Health Analysis">
     <meta name="twitter:description" content="Understand your lab results with AI-powered analysis. Private, secure, instant insights.">
 
-    <!-- Fonts -->
+    <!-- Fonts - Optimized for Critical Path -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="preload" href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIq15j8eUY.woff2" as="font" type="font/woff2" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet"></noscript>
 
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/components.css">
+    <!-- Critical CSS - Inline key styles -->
+    <style>
+        /* Critical above-the-fold styles */
+        :root{--serenya-blue-primary:#2196F3;--serenya-blue-light:#E3F2FD;--serenya-white:#FFFFFF;--text-primary:#212121;--text-secondary:#757575;--bg-primary:#FFFFFF;--surface-border:#E0E0E0;--font-primary:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto',sans-serif;--spacing-lg:24px;--spacing-xl:32px;--spacing-xxl:48px}
+        *{box-sizing:border-box;margin:0;padding:0}
+        html{font-size:16px;line-height:1.5}
+        body{font-family:var(--font-primary);font-size:1rem;line-height:1.5;color:var(--text-primary);background-color:var(--bg-primary);-webkit-font-smoothing:antialiased}
+        .container{width:100%;max-width:1200px;margin:0 auto;padding:0 20px}
+        .header{position:sticky;top:0;z-index:1000;background-color:var(--bg-primary);border-bottom:1px solid var(--surface-border)}
+        .navbar{padding:16px 0}
+        .navbar .container{display:flex;align-items:center;justify-content:space-between}
+        .logo{height:32px;width:auto}
+        .hero{background:linear-gradient(135deg,var(--serenya-blue-light) 0%,var(--bg-primary) 100%)}
+        .py-xxl{padding-top:var(--spacing-xxl);padding-bottom:var(--spacing-xxl)}
+        h1{font-family:var(--font-primary);font-size:2.5rem;line-height:1.2;font-weight:600;color:var(--text-primary);margin-bottom:1.5rem}
+        @media (max-width:768px){h1{font-size:2rem}}.btn-primary{background-color:var(--serenya-blue-primary);color:var(--serenya-white);border:none;padding:12px 24px;font-family:var(--font-primary);font-size:1rem;font-weight:500;border-radius:8px;cursor:pointer;min-height:48px;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;line-height:1}
+    </style>
+    
+    <!-- Non-Critical CSS - Deferred -->
+    <link rel="preload" href="css/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/main.css"></noscript>
+    <link rel="preload" href="css/components.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="css/components.css"></noscript>
 
     <!-- Schema Markup -->
     <script type="application/ld+json">
@@ -49,7 +75,7 @@
             <div class="container">
                 <div class="navbar-brand">
                     <a href="/" class="logo-link">
-                        <img src="images/serenya-logo-tight.png" alt="Serenya" class="logo">
+                        <img src="images/serenya-logo-tight.webp" alt="Serenya" class="logo">
                     </a>
                 </div>
                 <div class="navbar-nav">
@@ -87,7 +113,7 @@
                     </div>
                     <div class="col-lg-6 col-md-12">
                         <div class="hero-image">
-                            <img src="images/hero-doctor-conversation.png" alt="Person confidently discussing lab results with doctor using smartphone showing Serenya analysis" class="hero-img">
+                            <img src="images/hero-doctor-conversation.webp" alt="Person confidently discussing lab results with doctor using smartphone showing Serenya analysis" class="hero-img">
                         </div>
                     </div>
                 </div>
@@ -106,7 +132,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-lg">
                         <div class="card feature-card">
                             <div class="feature-icon">
-                                <img src="images/home-upload-lab-results.png" alt="Upload lab results" class="feature-icon-img">
+                                <img src="images/home-upload-lab-results.webp" alt="Upload lab results" class="feature-icon-img">
                             </div>
                             <h3 class="card-title">Upload Lab Results</h3>
                             <p class="card-description">Files from any medical provider</p>
@@ -116,7 +142,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-lg">
                         <div class="card feature-card">
                             <div class="feature-icon">
-                                <img src="images/get-clear-explanations.png" alt="Get clear explanations" class="feature-icon-img">
+                                <img src="images/get-clear-explanations.webp" alt="Get clear explanations" class="feature-icon-img">
                             </div>
                             <h3 class="card-title">Get Clear Explanations</h3>
                             <p class="card-description">Medical terms in language you understand</p>
@@ -126,7 +152,7 @@
                     <div class="col-lg-4 col-md-6 col-sm-12 mb-lg">
                         <div class="card feature-card">
                             <div class="feature-icon">
-                                <img src="images/feel-more-confident.png" alt="Feel more confident" class="feature-icon-img">
+                                <img src="images/feel-more-confident.webp" alt="Feel more confident" class="feature-icon-img">
                             </div>
                             <h3 class="card-title">Feel More Confident</h3>
                             <p class="card-description">Arrive prepared for your next doctor visit</p>
@@ -193,7 +219,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-brand">
-                        <img src="images/serenya-icon-logo.png" alt="Serenya" class="footer-logo">
+                        <img src="images/serenya-icon-logo.webp" alt="Serenya" class="footer-logo">
                         <p>Your AI Health Agent</p>
                     </div>
                 </div>
@@ -221,13 +247,13 @@
             <div class="footer-bottom">
                 <p>&copy; 2025 Serenya. All rights reserved.</p>
                 <p class="medical-disclaimer">
-                    <img src="images/medical-disclaimer-icon.png" alt="Medical disclaimer" class="medical-disclaimer-icon">
+                    <img src="images/medical-disclaimer-icon.webp" alt="Medical disclaimer" class="medical-disclaimer-icon">
                     Serenya is for educational purposes only and does not provide medical advice.
                 </p>
             </div>
         </div>
     </footer>
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js" async></script>
 </body>
 </html>
